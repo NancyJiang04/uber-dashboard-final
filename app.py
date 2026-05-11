@@ -448,7 +448,7 @@ def top_zones_with_wow(
 @st.cache_data
 def load_data():
     path = Path(__file__).resolve().parent / "location_features.csv.zip"
-    df = pd.read_csv(path)
+    df = pd.read_csv(path, compression="zip")
     df["date"] = pd.to_datetime(df["date"])
     return df
 
